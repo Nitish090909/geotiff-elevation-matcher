@@ -1,22 +1,72 @@
-# GeoTIFF Elevation Matcher with Interactive 3D Terrain
+# GeoTIFF Elevation Matcher
 
-## Features
-- Interactive 2D elevation map
-- Interactive 3D terrain surface (rotate, zoom, hover)
-- Optional electrode/location CSV overlay on the 3D terrain
-- Sample GeoTIFF elevations at CSV longitude/latitude coordinates using bilinear or nearest-pixel sampling
-- Export matched values to CSV or Excel
-- GeoTIFF metadata and band scale/offset display
-- Stale-result detection when input data or sampling settings change
+A Python-based geospatial application for working with GeoTIFF elevation data, sampling elevation values at geographic coordinates, and visualizing elevation results in 2D and 3D.
 
-## Run on Windows
-Open PowerShell in the folder containing `app.py`, then run:
+## 🚀 Live Demo
+
+**[Open GeoTIFF Elevation Matcher](https://geotiff-elevation-matcher-m2m3iphltodwatqdknraeh.streamlit.app/)**
+
+## ✨ Features
+
+- Load and process GeoTIFF elevation data.
+- Work with geographic coordinates (latitude and longitude).
+- Extract elevation values at specified locations.
+- Compare elevation values and calculate differences.
+- Visualize elevation data using interactive Plotly charts.
+- Explore elevation surfaces in 2D and 3D.
+
+## 🛠️ Technologies Used
+
+- **Python** — Core programming language
+- **Streamlit** — Interactive web application
+- **Rasterio** — GeoTIFF and raster data processing
+- **NumPy** — Numerical computation
+- **Pandas** — Tabular data processing
+- **Plotly** — Interactive data visualization
+- **SciPy** — Scientific computing and interpolation
+- **PyProj** — Coordinate reference system transformations
+
+## 💻 Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Nitish090909/geotiff-elevation-matcher.git
+cd geotiff-elevation-matcher
+```
+
+### 2. Create a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
 
 ```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
 python -m pip install -r requirements.txt
+```
+
+### 4. Run the application
+
+Navigate to the directory containing `app.py`, if necessary, and run:
+
+```bash
 python -m streamlit run app.py
 ```
 
-Upload a single-band elevation GeoTIFF. In the **3D Terrain** tab, optionally upload the electrode CSV to overlay its points. The longitude/latitude columns should be geographic coordinates in EPSG:4326. The app transforms them into the GeoTIFF CRS.
+Open the local URL displayed in your terminal, usually `http://localhost:8501`.
 
-The 3D surface is downsampled for display performance; sampling and exports continue to use the original raster. Confirm vertical units and datum from the data provider before treating values as metres above sea level.
+## 📂 Project Purpose
+
+This project helps explore workflows involving elevation rasters, coordinate-based elevation sampling, interpolation, and elevation-difference analysis.
+
+## 📄 License
+
+A license has not yet been specified for this project.
